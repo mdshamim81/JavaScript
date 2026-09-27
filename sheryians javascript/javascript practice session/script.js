@@ -97,4 +97,66 @@
 // console.groupEnd();
 
 // variables & Data types Question
-///////////////////////////////////////////
+
+//////////////////////////////////////
+// Q declare a const object, modify its properties and log the updates object
+
+// const obj ={
+//     name:"shamim",
+//     age:22,
+//     email:"shamim@gmail.com"
+// };
+
+// obj.age=32;
+// console.log(obj);
+
+//constant se aap value nahi kr skte ho update kr skte ho value ke andr ki cheeje 
+
+// const arr=[1,2,3,4];
+
+// // arr=12// change nhi krega
+// arr.pop();
+
+// const obj = {
+//     name:"shamim",
+//     age:22,
+//     email:"test@example.com"
+// };
+
+// obj.email = "huihui"; //age change na ho eske liye  ham freeze laga dete hai
+
+
+// const obj = {
+//     name:"shamim",
+//     age:22,
+//     email:"test@example.com"
+// };
+
+// Object.freeze(obj);
+// obj.name="shami"
+
+//Q convert "50"(string) into a number using 3 different methods
+
+// Number("50");
+// parseInt("50")
+// +"50"
+
+// typeof("");
+//typeof("")=string ,+("50")=nuber
+
+// Q check if "javascript"contains "script" without using .including()
+
+
+// let str = "javascript";
+// console.log(str.includes("script")); //method  ko use nhi krna Q ke according
+
+// let str = "javascript";
+// str.indexOf("script");//console pr check krne ke liye 
+// console.log(str.indexOf("script") !== -1); method 1
+
+// if(str.indexOf("script") === -1){
+//     console.log(false);
+// }
+// else{
+//     console.log(true);
+// }
