@@ -114,6 +114,7 @@
 
 // const id1=Symbol("id1");
 // const id2=Symbol("id1");
+// console.log(id2)
 // // console.log(id2);
 
 // console.log(id2==id1);
@@ -122,25 +123,49 @@
 //array, object, function
 
 // let arr=[11,12,"shamim", true];
-// console.log(arr);
+// // console.log(arr);
+// console.log(typeof arr);
 
 //object
 //shamim 122313 22 gen
-let user={
-  name:"shamim",
-  account:122313,
-  age:22,
-  category:'gen'
-}
-
+// let user={
+//   name:"shamim",
+//   account:122313,
+//   age:22,
+//   category:'gen'
+// }
+// console.log(typeof user)
 
 // function add(){
 //   console.log("hello");
 // }
 // add();
 
-let s=function add(){
-  console.log("hello");
+// let s=function add(){
+//   console.log("hello");
+// }
+// // console.log(s);
+// // s();
+// console.log(typeof s);
+
+//premitive data type is inmutable
+let a=20;
+a=40;
+let str="shamim"
+str="wasim";
+console.log(str);
+
+// non premitive data type 
+let arr=[10,20,30,40];
+arr.push(90);
+arr[0]=70;
+console.log(arr);
+
+let obj={
+  name:"mohan",
+  age:22,
 }
-// console.log(s);
-s();
+// console.log(obj.name);
+let obj2=obj;
+obj2.name="ahmad";
+console.log(obj);
