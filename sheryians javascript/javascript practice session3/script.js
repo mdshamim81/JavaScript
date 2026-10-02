@@ -39,9 +39,31 @@
 //   return b-a;
 // })
 
+// var arr=[1,2,3,4,5,6,7,8,98,31243];
+// var ans=arr.sort((a,b)=>b-a);
 
-var arr=[1,2,3,4,5,6,7,8,98,31243];
-var ans=arr.sort((a,b)=>b-a);
+//reverse and array without using .reverse{}
 
+// var arr=[1,2,3,4,5,6,7,8,98,345423];
+// var arr2=[];
+// for(var i = arr.length-1; i>=0; i--){
+//   arr2.push(arr[i]);
+// }
 
-//1st  arr[1]
+// find the most frequent element in an array
+
+var arr = [3, 4, 1, 3, 4, 6, 7];
+var obj={};
+arr.forEach(function (val) {
+
+  //simple method
+  // if(obj[val] ===undefined){
+  //   obj[val]=1;
+  // }
+  // else{
+  //   obj[val]++;
+  // }
+
+//smart rule
+  obj[val]===undefined ? (obj[val]=1): obj[val]++;
+});
