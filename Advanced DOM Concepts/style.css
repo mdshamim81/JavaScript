@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    color: #fff;
+}
+html,
+body {
+    height: 100%;
+    width:100%;
+}
+
+body{
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* #hero{
+  background-color: lightblue;
+  font-size:60px ;
+}
+
+#heroine{
+  background-color: pink;
+  font-size: 50px;
+} */
+
+
+img{
+  height: 300px;
+  width: 200px;
+  object-fit: cover;
+}
+
+
+button{
+  background: rgb(58, 184, 226);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+}
+
+button:active{
+  scale: 0.97;
+}

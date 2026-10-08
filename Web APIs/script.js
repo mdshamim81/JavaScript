@@ -1,4 +1,4 @@
-//setTimeout=delay 
+//setTimeout=delay
 
 // setTimeout(function(){
 //   console.log('hello dosto')
@@ -17,7 +17,6 @@
 // setTimeout(function(){
 //   console.log('hello 2')
 // },4000)
-
 
 // var btn=document.querySelector('button')
 // var h5=document.querySelector('h5')
@@ -48,11 +47,10 @@
 //     h5.style.color = "red";
 //     btn.innerHTML = 'Add Friend';
 //     btn.style.backgroundColor='lightseagreen'
-    
+
 //     check=0
 //   }
 // }
-
 
 //...
 
@@ -84,11 +82,6 @@
 //   }
 // })
 
-
-
-
-
-
 //setInterval =controller loop
 
 // setInterval(function(){
@@ -101,3 +94,32 @@
 //    console.log('value of a is',a)
 // },1000)
 
+// //setInterval ko rokne ke liye
+// var i=1
+// var print=setInterval(function(){
+//   console.log('hello',i++)
+// },100)
+
+// setTimeout(()=>{
+//   clearInterval(print)
+// },3000) // 5 secound me jakr code ruk jayega
+
+var btn = document.querySelector("button");
+var percent = document.querySelector("#percent");
+var growth = document.querySelector("#growth");
+
+var grow = 0;
+
+btn.addEventListener("click", function () {
+  var int = setInterval(function () {
+    grow++;
+    percent.innerHTML = grow + "%";
+    growth.style.width = grow + "%";
+  }, 50);
+
+  setTimeout(function () {
+    clearInterval(int);
+    btn.innerHTML = "Downloaded";
+    btn.style.opacity = 0.5;
+  }, 5000);
+});
