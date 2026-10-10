@@ -28,7 +28,7 @@ body{
   font-size: 50px;
 } */
 
-
+/* 
 img{
   height: 300px;
   width: 200px;
@@ -46,4 +46,24 @@ button{
 
 button:active{
   scale: 0.97;
+} */
+
+
+.image{
+  height: 200px;
+  position: absolute;
 }
+button{
+  background: rgb(24, 150, 81);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+  position: relative;
+  z-index: 8;
+}
+
+button:active{
+  scale: 0.97;
+}
+
