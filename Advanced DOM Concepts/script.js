@@ -75,24 +75,57 @@
 
 
 
-var btn=document.querySelector('button')
-var body=document.querySelector('body')
+// var btn=document.querySelector('button')
+// var body=document.querySelector('body')
 
-btn.addEventListener('click',function(){
-  var x=Math.random()*90
-  var y=Math.random()*90
-  var rot=Math.random()*360
+// btn.addEventListener('click',function(){
+//   var x=Math.random()*90
+//   var y=Math.random()*90
+//   var rot=Math.random()*360
  
 
 
-  var img=document.createElement('img')
-  img.setAttribute('src','./chutki.png')  
-  // img.setAttribute('class','image')
-  img.style.height='200px'
-  img.style.position='absolute'
-  img.style.left=x+'%'
-  img.style.top=y+'%'
-  img.style.rotate=rot+'deg'
+//   var img=document.createElement('img')
+//   img.setAttribute('src','./chutki.png')  
+//   // img.setAttribute('class','image')
+//   img.style.height='200px'
+//   img.style.position='absolute'
+//   img.style.left=x+'%'
+//   img.style.top=y+'%'
+//   img.style.rotate=rot+'deg'
 
-  body.appendChild(img)
+//   body.appendChild(img)
+// })
+
+
+
+
+
+//love emoji hide dblclick
+// var box=document.querySelector('#box')
+// var love=document.querySelector('.love')
+
+// box.addEventListener('dblclick',function(){
+//   love.style.opacity=0
+//   setTimeout(function(){
+//     love.style.opacity='1'
+
+
+//     setTimeout(function(){
+//       love.style.opacity='0'
+//     },1000)
+
+//   },2000)
+// })
+
+
+
+
+//mouseneter
+
+
+var box1=document.querySelector('#box1')
+
+box1.addEventListener('mouseenter',function(){
+  console.log('enter performed')
 })

@@ -49,6 +49,9 @@ button:active{
 } */
 
 
+
+
+/* 
 .image{
   height: 200px;
   position: absolute;
@@ -65,5 +68,28 @@ button{
 
 button:active{
   scale: 0.97;
+} */
+
+
+
+
+
+/* #box{
+  height: 200px;
+  width: 200px;
+  background: royalblue;
 }
 
+.love{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  opacity: 0;
+} */
+
+
+#box1{
+  height: 200px;
+  width: 200px;
+  background: rgb(16, 52, 161);
+}
