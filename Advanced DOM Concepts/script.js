@@ -107,9 +107,10 @@
 
 // box.addEventListener('dblclick',function(){
 //   love.style.opacity=0
+//   love.style.transform='scale(0.5)'
 //   setTimeout(function(){
 //     love.style.opacity='1'
-
+//     love.style.transform='scale(1.5)'
 
 //     setTimeout(function(){
 //       love.style.opacity='0'
@@ -124,8 +125,25 @@
 //mouseneter
 
 
-var box1=document.querySelector('#box1')
+// var box1=document.querySelector('#box1')
 
-box1.addEventListener('mouseenter',function(){
-  console.log('enter performed')
+// box1.addEventListener('mouseenter',function(){
+//   document.body.style.backgroundColor='red'
+// })
+
+
+// box1.addEventListener('mouseleave',function(){
+//   document.body.style.backgroundColor='#111'
+// })
+
+
+
+
+var box1=document.querySelector('#box1');
+var growc=0
+
+
+box1.addEventListener('mousemove',function(dets){
+  // growc++
+  console.log(dets)
 })
