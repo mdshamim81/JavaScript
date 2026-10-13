@@ -2,7 +2,8 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:gilroy;
+    font-family:'gilroy';
+    color: #fff;
 }
 html,
 body {
@@ -10,6 +11,40 @@ body {
     width:100%;
 }
 
+#main{
+    height: 100%;
+    width: 100%;
+    background: #111;
+    position: relative;
+}
+
 .elem{
-  height: 1;
+    height: 100px;
+    width: 100%;
+    /* background: red; */
+    border-bottom:2px solid #fff ;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.elem h1{
+    font-size: 5vw;
+    position: relative;
+    z-index: 9;
+    mix-blend-mode: difference;
+}
+
+.elem img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: all linear 0.2s;
+    pointer-events: none;
 }

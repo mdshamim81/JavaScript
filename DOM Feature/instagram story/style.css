@@ -1,0 +1,71 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'gilroy';
+}
+html,
+body {
+    height: 100%;
+    width:100%;
+}
+body{
+  background:rgb(0, 205, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card{
+  height: 560px;
+  width: 300px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid black;
+  position: relative;
+}
+
+#storiyan{
+  height: 120px;
+  width: 100%;
+  /* background: red; */
+  border-bottom: 1px solid #dadada;
+  padding: 15px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+}
+#storiyan::-webkit-scrollbar{
+  display: none;
+}
+.story{
+  /* background: blue; */
+  border: 3px solid red;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 5px;
+}
+.story img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover0;
+  object-position: center;
+}
+
+#full-screen{
+  height: 100%;
+  width: 100%; 
+  background-size: cover;
+  background-position:center;
+  position: absolute;
+  display: none;
+}
+
+
+
+
