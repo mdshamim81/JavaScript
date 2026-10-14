@@ -1,0 +1,70 @@
+*{
+   margin:0;
+   padding:0;
+   box-sizing:border-box;
+   font-family:'gilroy';
+}
+html,
+body {
+    height: 100%;
+    width:100%;
+    background: #333;
+}
+
+#main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#cards{
+  height: 320px;
+  width: 220px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  overflow:hidden;
+  position: relative;
+  padding-bottom: 20px;
+  
+  
+}
+
+.img-bg{
+  height: 80px;
+  width: 100%;
+  object-fit: cover;
+  border-radius:10px  10px 0px 0px ;
+}
+.img-profile{
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%; 
+  position: relative;
+  margin-top: -50px;
+}
+
+#cards h4{
+  color: #555;
+  margin: 2px;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+p{
+  padding: 3px;
+  margin-right: 30px;
+  margin-left: 30px;
+  font-size: 10px;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
