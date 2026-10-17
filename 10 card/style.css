@@ -8,7 +8,7 @@ html,
 body {
     height: 100%;
     width:100%;
-    background: #333;
+    background: #0f172a;
 }
 
 #main{
@@ -25,16 +25,15 @@ body {
 }
 
 #cards{
-  height: 350px;
-  height: auto;
+  height: 300px;
+  /* height: auto; */
   width: 250px;
-  background: white;
+  background: #f1e9da;
   border-radius: 10px ;
   text-align: center;
   overflow:visible;
   position: relative;
-  padding-bottom: 10px; 
-  flex-shrink: 0;
+  padding-bottom: 50px; 
 }
 
 .img-bg{
@@ -44,8 +43,8 @@ body {
   border-radius:10px  10px 0px 0px ;
 }
 .img-profile{
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   object-fit: cover;
   object-position: center;
   border-radius: 50%; 
@@ -56,30 +55,35 @@ body {
 #cards h4{
   color: #555;
   margin: 2px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 900;
   opacity: 0.5;
 }
 
 p{
   padding: 3px;
-  margin-right: 30px;
-  margin-left: 30px;
-  font-size: 10pxpx;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 13px;
 }
 
 .button{
+  position: absolute;
   display: flex;
   justify-content: center;
   gap: 4px;
-  margin-top: 20px;
-  margin: 10px;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+
 }
 .button button{
   padding: 10px 50px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   cursor: pointer;
+ 
 }
 
 
@@ -89,7 +93,7 @@ p{
   padding: 6px 30px;
   font-size: 15px;
   font-weight: 700;
-  background: #111827;
+  background: rgb(103, 178, 32);
   color: #dadada;
   border: none;
   border-radius:10px;
@@ -98,25 +102,26 @@ p{
 }
 
 .view-Profile:hover{
-  background: #374151;
+  background: #173f80;
   transform: scale(1.05);
 }
 
 .Profile-details{
-  margin: 10px;
-  padding: 12px 8px;
+  margin: 0px;
+  padding: 12px ;
   background: #f3f4f6;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow-wrap: anywhere;
 }
 
 .Profile-details p{
   margin: 0;
   padding: 5px;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
   overflow-wrap: anywhere;
   text-align: left;
+  
 }
 .Profile-details img{
   width: 100%;
@@ -124,4 +129,23 @@ p{
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+body:has(#profile-container){
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0f172a;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+#profile-container{
+  width: 320px;
+  max-width: 90%;
+  margin: 0;
 }

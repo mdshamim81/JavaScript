@@ -5,7 +5,7 @@ var users=[
     designation:"Frontend Developer",
     company:"Google",
     skills:["HTML", "CSS", "JavaScript", "React", "tailwind CSS"],
-    bgImage:"https://images.unsplash.com/photo-1791563037284-abd6923d4261?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+    bgImage:"https://images.unsplash.com/photo-1789758612601-6203670d039a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDE%3D",
     image:"https://plus.unsplash.com/premium_photo-1787609122550-4f4d130f66ad?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
   },
   {
@@ -60,7 +60,7 @@ var users=[
     company:"TCS",
     skills:["Docker", "Kubernetes", "AWS","Linux", "Jenkins"],
     bgImage:"https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-    image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+    image:"https://plus.unsplash.com/premium_photo-1791870391293-789520cbbc40?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
   },
   {
     fullName:"Neha Mishra",
@@ -121,20 +121,45 @@ function heroFunction(){
   })
 main.innerHTML=sum
 }
-heroFunction()
+
 // var h2=document.querySelector("#cards h2")
 // console.log(h2);
-main.addEventListener('click',function(dets){
+if(main){
+  heroFunction()
+  main.addEventListener('click',function(dets){
   if(dets.target.classList.contains('view-Profile')){
-    var idx=dets.target.dataset.id;
-    var details=document.querySelector("#Profile-" +idx)
-    if(details.hidden){
-      details.hidden=false;
-      dets.target.innerHTML="hide Profile";
-    }else{
-      details.hidden=true;
-      dets.target.innerHTML="view Profile"
-     
-    }
+   var idx=dets.target.dataset.id;
+
+   window.open('profile.html?id='+ idx,"_blank");
+
   }
 })
+}
+
+var profileContainer=document.querySelector("#profile-container");
+
+if(profileContainer){
+  var params=new URLSearchParams(window.location.search);
+  var idx=Number(params.get("id"))
+
+  if(
+    params.get("id")===null ||
+    !Number.isInteger(idx) ||
+    idx <0 ||
+    idx >= users.length
+  ) {
+    profileContainer.innerHTML="<h2>Profile not found!</h2>";
+
+  } else{
+    var user=users[idx];
+    profileContainer.innerHTML=`
+    <div class="Profile-details">
+      <img src="${user.image}" alt="profile image">
+      <h2><b>Full Name: </b> ${user.fullName}</h2>
+      <p><b>Designation: </b>${user.designation}</p>
+      <p><b>Age: </b>${user.age}</p>
+      <p><b>Company: </b>${user.company}</p>
+      <p><b>Skills: </b>${user.skills.join(",")}</p></div>
+    `;
+  }
+} 
