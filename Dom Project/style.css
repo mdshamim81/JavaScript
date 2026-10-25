@@ -1,15 +1,15 @@
-
-:root{
-  --pri:#F8F4E1;
-  --sec:#3f1c03;
-  --tri1:#E5B299;
-  --tri2:#B4846C;
+:root {
+  --pri: #f8f4e1;
+  --sec: #3f1c03;
+  --tri1: #feba17;
+  --tri2: #644b40;
+  --red: red;
 }
 
-@font-face{
-  font-family:aeonik;
+@font-face {
+  font-family: aeonik;
   font-weight: 200;
-  src:url(./AeonikTRIAL-Light.otf);
+  src: url(./AeonikTRIAL-Light.otf);
 }
 
 @font-face {
@@ -24,34 +24,33 @@
   src: url(./AeonikTRIAL-Bold.otf);
 }
 
-*{
-   margin:0;
-   padding:0;
-   box-sizing:border-box;
-   font-family: aeonik;
-   color: var(--pri);
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: aeonik;
+  color: var(--pri);
 }
 html,
 body {
-    height: 100%;
-    width:100%;
+  height: 100%;
+  width: 100%;
 }
 
-#main{
+#main {
   height: 100%;
   width: 100%;
   background-color: var(--sec);
 }
 
-nav{
+nav {
   position: fixed;
   width: 100%;
   height: 60px;
   background-color: var(--tri2);
 }
 
-section.allElems{
+section.allElems {
   height: 100%;
   width: 100%;
   padding: 40px;
@@ -63,7 +62,7 @@ section.allElems{
   position: absolute;
 }
 
-.elem{
+.elem {
   background-color: #feba17;
   border-radius: 20px;
   font-size: 20px;
@@ -76,38 +75,36 @@ section.allElems{
   cursor: pointer;
   box-shadow: 10px 5px 10px rgb(0 0 0.2);
 }
-.elem img{
+.elem img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.elem h2{
+.elem h2 {
   position: absolute;
   font-weight: 200;
   font-size: 20px;
   bottom: 4%;
   right: 10%;
-
 }
-.elem:active{
+.elem:active {
   scale: 0.97;
 }
 
-
-.fullElem{
+.fullElem {
   height: 100%;
   width: 100%;
   background-color: #3f1c03;
   padding: 20px;
- 
+
   display: none;
   position: absolute;
 }
 
-.back{
+.back {
   position: absolute;
   right: 2%;
-  background-color: red;
+  background-color:var(--red);
   border-radius: 10px;
   padding: 10px 15px;
   font-size: 20px;
@@ -115,7 +112,150 @@ section.allElems{
   border: none;
 }
 
-.back:active{
+.back:active {
   scale: 0.97;
   cursor: pointer;
+}
+
+.todo-list-fullpage {
+  display: block;
+}
+
+.todo-list-fullpage h2 {
+  font-size: 65px;
+}
+
+.todo-list-fullpage .todo-container {
+  height: 80%;
+  width: 100%;
+  margin-top: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-list-fullpage .todo-container .addTask {
+  width: 33%;
+  height: 100%;
+  background-color: var(--tri2);
+  border-radius: 20px;
+
+}
+
+.todo-list-fullpage .todo-container .addTask form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+}
+.todo-container .addTask form input#task-input{
+  padding: 15px 25px;
+  width: 100%;
+  font-size: 25px;
+  background-color: var(--pri);
+  color: var(--sec);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.todo-container .addTask form textarea {
+  padding: 15px 25px;
+  width: 100%;
+  font-size: 28px;
+  background-color: var(--pri);
+  color: var(--sec);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.todo-container .addTask form button {
+  padding: 15px 25px;
+  width: 100%;
+  font-size: 28px;
+  background-color: var(--tri1);
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  outline: none;
+  margin-bottom: 20px;
+  transition: all ease 0.3s;
+}
+.todo-container .addTask form button:active {
+  scale: 0.97;
+}
+
+.todo-list-fullpage .todo-container .allTask {
+  width: 65%;
+  height: 100%;
+  background-color: var(--tri2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  overflow: auto;
+}
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--pri);
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.task h5 {
+  color: var(--sec);
+  font-size: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+.task h5 span{
+  color: var(--pri);
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background-color: var(--red);
+}
+.task h5 span.true{
+  opacity: 1;
+}
+.task h5 span.false{
+  opacity: 0;
+}
+.task button {
+  padding: 10px 15px;
+  color: var(--pri);
+  background-color: green;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  font-weight: 600;
+}
+.task button:active{
+  scale: 0.97;
+}
+.mark-imp{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 10px;
+  width: 100%;
+  margin-bottom:20px ;
+  gap: 30px;
+}
+
+.mark-imp input{
+  scale: 1.7;
+}
+.mark-imp label{
+  font-size: 20px;
 }
