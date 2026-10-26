@@ -119,4 +119,3 @@ function todoList() {
 }
 localStorage.removeItem('currentTask');
 todoList()
-//video 2:40 pouse
