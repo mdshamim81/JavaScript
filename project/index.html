@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+  />
 </head>
 <body>
   <div id="main">
@@ -33,19 +37,44 @@
       </div>
     </section>
 
-    <section class="fullElem">
-      <h1>todo page</h1>
+    <section class="fullElem todo-list-fullpage">
+      <button class="back" id="0">Close</button>
+      <h2>Your personalised Task List</h2>
+      <div class="todo-container">
+        <div class="addTask">
+          <form>
+            <input id="task-input" type="text" placeholder="Enter Task">
+            <textarea name="" placeholder="Enter Details" id="" rows="6" cols=""></textarea>
+            <div class="mark-imp">
+              <input type="checkbox" id="check">
+              <label for="check">Mark as Important!</label>
+            </div>
+            <button>Add Task</button>
+          </form>
+        </div>
+
+        <div class="allTask">
+          
+        </div>
+
+      </div>
     </section>
-    <section class="fullElem">
+
+    
+    <section class="fullElem daily-planner-fullpage">
+      <button class="back" id="1">Close</button>
       <h1>Daily Planner</h1>
     </section>
-    <section class="fullElem">
+    <section class="fullElem motivational-fullpage">
+      <button class="back" id="2">Close</button>
       <h1>Motivation</h1>
     </section>
-    <section class="fullElem">
+    <section class="fullElem Pomodoro-fullpage">
+      <button class="back" id="3">Close</button>
       <h1>Pomodoro timer</h1>
     </section>
-    <section class="fullElem">
+    <section class="fullElem daily-goals-fullpage">
+      <button class="back" id="4">Close</button>
       <h1>Daily Goals</h1>
     </section>
     
