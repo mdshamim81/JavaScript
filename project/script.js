@@ -100,10 +100,10 @@ function todoList() {
   var taskInput = document.querySelector(".addTask form input");
   var taskDetailsInput = document.querySelector(".addTask form textarea");
   var taskCheckbox = document.querySelector(".addTask form #check");
-// 8. Naya task add karna
+  // 8. Naya task add karna
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-     if (taskInput.value.trim() === "") {
+    if (taskInput.value.trim() === "") {
       alert("Please enter a task title!");
       return;
     }
@@ -153,9 +153,9 @@ function dailyPlanner() {
   });
 
   dayPlanner.innerHTML = wholeDaySum;
-// Saare planner inputs select karo
+  // Saare planner inputs select karo
   var dayPlannerInput = document.querySelectorAll(".day-planner input");
-   // Har input mein changes hone par data save karo
+  // Har input mein changes hone par data save karo
   dayPlannerInput.forEach(function (elem) {
     elem.addEventListener("input", function () {
       console.log("hello");
@@ -167,3 +167,26 @@ function dailyPlanner() {
   });
 }
 dailyPlanner();
+
+//check api
+// async function fetchQuote(){
+//   let response=await fetch('https://dummyjson.com/quotes/random')
+//   console.log(await response.json());
+
+// }
+// fetchQuote()
+
+function motivationalQuoteContent() {
+  var motivationQuote = document.querySelector(".motivation-2 h1");
+  var motivationAuthor = document.querySelector(".motivation-3 h2");
+
+  async function fetchQuote() {
+    let response = await fetch("https://dummyjson.com/quotes/random");
+    let data = await response.json();
+    motivationQuote.innerHTML = data.quote;
+    motivationAuthor.innerHTML = data.author;
+  }
+  fetchQuote();
+}
+
+motivationalQuoteContent ()

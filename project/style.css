@@ -1,9 +1,12 @@
 :root{
   --pri:#F8F4E1;
-  --sec:#4e2103;
+  --sec:#4e210a;
   --tri1:#feba17;
   --tri2:#74512D;
   --red:red;
+  --green: rgb(9, 138, 89);
+  --blue: rgb(0, 191, 255);
+  --black: black;
 }
 
 
@@ -28,7 +31,7 @@
     padding:0;
     box-sizing:border-box;
     font-family: aeonik;
-    color: --pri;
+    color: var(--pri);
 }
 html,
 body {
@@ -166,6 +169,7 @@ justify-content: space-between;
   border: none;
   outline: none;
   margin-bottom: 20px;
+  color: var(--sec);
 }
 
 .todo-container .addTask form button{
@@ -292,6 +296,8 @@ scale: 2;
 
 
 
+
+
 /* dailly planner */
 
 /* .daily-planner-fullpage{
@@ -340,4 +346,104 @@ scale: 2;
   outline: none;
   color: #F8F4E1;
   
+}
+
+/* motivational */
+
+.motivational-fullpage{
+  /* display: block; */
+  position: absolute;
+}
+.motivation-fullPage-container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute; */
+  
+}
+.motivational-fullpage .motivation-container{
+  height: 400px;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50px;
+  padding: auto;
+  
+}
+
+.motivational-fullpage .motivation-container::after{
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: var(--tri1);
+  border-radius: 50px;
+  scale: 1.15;
+  filter: blur(180px);
+  z-index: 8;
+}
+.motivational-fullpage .motivation-container .motivation-wrapper{
+  z-index: 10;
+  position: absolute;
+  /* height: 100%; */
+  width: 100%;
+  background-color: var(--tri1);
+  padding: 20px;
+  border-radius: 30px;
+  border: 3px solid var(--sec);
+}
+.motivation-1{
+  display: flex;
+  align-self: center;
+  justify-content: flex-start;
+
+}
+.motivation-1 h2{
+  color: var(--pri);
+  background-color: var(--tri2);
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 50px;
+  width: fit-content;
+  font-weight: 700;
+  text-align: right;
+}
+.motivation-2{
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  /* border-radius: 20px; */
+}
+.motivation-2 h1{
+  font-size: 50px;
+  font-weight: 500;
+  color: var(--sec);
+  
+}
+
+.motivation-3{
+  display: flex;
+  align-self: center;
+  justify-content: flex-end;
+  
+}
+.motivation-3 h2{
+  background-color: var(--tri2);
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 30px;
+  width: fit-content;
+  font-weight: 500;
+  text-align: right;
+}
+.motivational-fullpage .motivation-container .motivation-wrapper img{
+  position: absolute;
+  right: 5%;
+  opacity: 0.2;
+  top: 5%;
+  height: 50px;
 }
