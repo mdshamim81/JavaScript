@@ -259,3 +259,85 @@ scale: 2;
 .mark-imp label{
   font-size: 20px;
 }
+
+
+
+
+/* Task title click */
+.task-title {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.task-title:hover {
+  color: var(--tri2);
+}
+
+/* Task details */
+.task-details {
+  display: none;
+  color: var(--sec);
+  font-size: 18px;
+  margin-top: 10px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+
+.task-info {
+  flex: 1;
+  min-width: 0;
+}
+
+
+
+/* dailly planner */
+
+/* .daily-planner-fullpage{
+  display: block;
+} */
+.daily-planner-fullpage h2{
+  font-size: 70px;
+
+}
+.daily-planner-fullpage .day-planner{
+  background-color: var(--tri2);
+  height: 80%;
+  margin-top: 40px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow: auto;
+  justify-content: space-between;
+}
+
+.daily-planner-fullpage .day-planner .day-planner-time{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 49%;
+  margin-bottom: 15px;
+}
+.day-planner .day-planner-time p{
+  position: absolute;
+  top: 12%;
+  left: 1%;
+  font-size: 16px;
+  color: var(--tri1);
+}
+.day-planner .day-planner-time input{
+  padding: 20px 45px;
+  width: 100%;
+  background-color: var(--sec);
+  border-radius: 5px;
+  border: none;
+  font-size: 35px;
+  padding-top: 34px;
+  outline: none;
+  color: #F8F4E1;
+  
+}
