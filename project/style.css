@@ -40,7 +40,11 @@ body {
     background-color: var(--sec);
     color: white;
 }
-
+#main{
+    height: 100%;
+    width:100%;
+    background-color: var(--sec);
+}
 h1{
   font-family: aeonik;
   font-weight: 700;
@@ -57,21 +61,24 @@ section.allElems{
   height: 100%;
   width: 100%;
   padding: 40px;
-  padding-top: 50px;
+  
+  position: absolute;
+}
+
+.allElems .allFeatures{
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 20px;
-  position: absolute;
+  overflow: auto;
 }
+
 .elem{
   background-color: #FEBA17;
   height: 300px;
   width: 220px;
   font-size: 20px;
   border-radius: 10px;
-  overflow: hidden;
-  position: relative;
   overflow: hidden;
   position: relative;
   transition: all ease 0.2s;
@@ -158,6 +165,7 @@ justify-content: space-between;
   border: none;
   outline: none;
   margin-bottom: 20px;
+  font-weight: 500;
 }
 
 .todo-container .addTask form textarea{
@@ -446,4 +454,52 @@ scale: 2;
   opacity: 0.2;
   top: 5%;
   height: 50px;
+}
+
+
+/* pomodoro timer */
+
+.Pomodoro-fullpage{
+  /* display: block; */
+  /* position: relative; */
+}
+
+.Pomodoro-fullpage h2{
+  font-size: 80px;
+}
+.Pomodoro-fullpage .pomo-timer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.pomo-timer h1{
+  font-size: 100px;
+  
+}
+.pomo-timer button{
+  background-color: var(--tri2);
+  padding: 10px 20px;
+  font-size: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 5px 5px 0px black;
+  transition: all ease 0.1s;
+  font-weight: 700;
+}
+
+.pomo-timer button:active{
+  box-shadow: 0px 0px 0px black;
+}
+.Pomodoro-fullpage .session{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%,0);
+  background-color: var(--green);
+  padding: 15px 30px;
+  font-size: 30px;
+  border-radius: 5px;
 }

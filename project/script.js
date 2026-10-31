@@ -188,5 +188,79 @@ function motivationalQuoteContent() {
   }
   fetchQuote();
 }
+motivationalQuoteContent();
 
-motivationalQuoteContent ()
+// pomodorotimer
+function timer() {
+  let timer = document.querySelector(".pomo-timer h1");
+  var startBtn = document.querySelector(".pomo-timer .start-timer");
+  var pauseBtn = document.querySelector(".pomo-timer .pause-timer");
+  var resetBtn = document.querySelector(".pomo-timer .reset-timer");
+  var session = document.querySelector(".Pomodoro-fullpage .session");
+
+  var isworkSession = true;
+
+  let timerInterval = null;
+  let totalSeconds = 25 * 60;
+
+  function updateTime() {
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+
+    timer.innerHTML = `${String(minutes).padStart("2", "0")}:${String(seconds).padStart("2", "0")}`;
+  }
+
+  function startTimer() {
+    clearInterval(timerInterval);
+
+    if (isworkSession) {
+      timerInterval = setInterval(function () {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          updateTime();
+        } else {
+          isworkSession = false;
+          clearInterval(timerInterval);
+          timer.innerHTML = "05:00";
+          session.innerHTML = "Take aBreak";
+          session.style.backgroundColor = "var(--blue)";
+          totalSeconds = 5 * 60;
+        }
+      }, 1000);
+    } else {
+      timerInterval = setInterval(function () {
+        if (totalSeconds > 0) {
+          totalSeconds--;
+          updateTime();
+        } else {
+          isworkSession = true;
+          clearInterval(timerInterval);
+          timer.innerHTML = "25:00";
+          session.innerHTML = "Work Session";
+          session.style.backgroundColor = "var(--green)";
+          totalSeconds = 25 * 60;
+        }
+      }, 1000);
+    }
+  }
+
+  function pauseTimer() {
+    clearInterval(timerInterval);
+  }
+
+  function resetTimer() {
+    clearInterval(timerInterval);
+    totalSeconds = 25 * 60;
+    updateTime();
+    // Session text reset karo
+    session.innerHTML = "Work Session";
+
+    // Background color reset karo
+    session.style.backgroundColor = "var(--green)";
+  }
+
+  startBtn.addEventListener("click", startTimer);
+  pauseBtn.addEventListener("click", pauseTimer);
+  resetBtn.addEventListener("click", resetTimer);
+}
+timer();
