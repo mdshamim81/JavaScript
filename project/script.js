@@ -264,3 +264,18 @@ function timer() {
   resetBtn.addEventListener("click", resetTimer);
 }
 timer();
+var apikey='a76f7352f1ac48028af150826260111'
+var city='Bhopal'
+
+
+
+
+async function weatherAPICall(){
+  var response=await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}`)
+  
+  
+  data =await response.json()
+}
+weatherAPICall()
+
+
