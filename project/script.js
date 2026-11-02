@@ -264,18 +264,105 @@ function timer() {
   resetBtn.addEventListener("click", resetTimer);
 }
 timer();
-var apikey='a76f7352f1ac48028af150826260111'
-var city='Bhopal'
 
+function weatherFunctionality() {
+  var apikey = "a76f7352f1ac48028af150826260111";
+  var city = "Bhopal";
 
+  var header1Time = document.querySelector(".header-1 h1");
+  var header1Date = document.querySelector(".header-1 h2");
+  var header2temp = document.querySelector(".header-2 h2");
+  var header2condition = document.querySelector(".header-2 h4");
+  var Precipitation = document.querySelector(".header-2 .Precipitation");
+  var Humidity = document.querySelector(".header-2 .Humidity");
+  var Wind = document.querySelector(".header-2 .Wind");
 
+  async function weatherAPICall() {
+    var response = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}`,
+    );
+    data = await response.json();
 
-async function weatherAPICall(){
-  var response=await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}`)
-  
-  
-  data =await response.json()
+    console.log(data.current);
+
+    // header2temp.innerHTML=`${data.current.temp_c}°C`
+    // header2condition.innerHTML=`${data.current.condition.text}`
+    Wind.innerHTML = `Wind: ${data.current.wind_kph}km/h`;
+    Precipitation.innerHTML = `Heat Index: ${data.current.heatindex_c} 0%`;
+    Humidity.innerHTML = `Humidity: ${data.current.humidity}%`;
+  }
+  weatherAPICall();
+
+  function timeDate() {
+    const totaldayofWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const monthName = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    var date = new Date();
+    var dayofWeek = totaldayofWeek[date.getDay()];
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var tarik = date.getDay();
+    var month = monthName[date.getMonth()];
+    var year = date.getFullYear();
+    header1Date.innerHTML = `${tarik} ${month}, ${year}`;
+
+    if (hours > 12) {
+      header1Time.innerHTML = `${dayofWeek}, ${String(hours).padStart("2", "0")}:${String(minutes).padStart("2", "0")}:${String(seconds).padStart("2", "0")} PM`;
+    } else {
+      header1Time.innerHTML = `${dayofWeek}, ${String(hours).padStart("2", "0")}:${String(minutes).padStart("2", "0")}:${String(seconds).padStart("2", "0")} AM`;
+    }
+  }
+  setInterval(() => {
+    timeDate();
+  }, 1000);
 }
-weatherAPICall()
+weatherFunctionality();
 
-
+function changeTheme() {
+  var theme = document.querySelector(".theme");
+  var rootElement = document.documentElement;
+  var flag = 0;
+  theme.addEventListener("click", function () {
+    if (flag == 0) {
+      rootElement.style.setProperty("--pri", "#222831");
+      rootElement.style.setProperty("--sec", "#0D1C42");
+      rootElement.style.setProperty("--tri1", "#464B71");
+      rootElement.style.setProperty("--tri2", "#393E46");
+      flag = 1;
+    } else if (flag == 1) {
+      rootElement.style.setProperty("--pri", "#000000");
+      rootElement.style.setProperty("--sec", "#232F72");
+      rootElement.style.setProperty("--tri1", "#478B8D");
+      rootElement.style.setProperty("--tri2", "#E8DDB4");
+      flag = 2;
+    } else if (flag == 2) {
+      rootElement.style.setProperty("--pri", "#f8f4e1");
+      rootElement.style.setProperty("--sec", "#381c0a");
+      rootElement.style.setProperty("--tri1", "#feba17");
+      rootElement.style.setProperty("--tri2", "#74512d");
+      flag = 0;
+    }
+  });
+}
+changeTheme()

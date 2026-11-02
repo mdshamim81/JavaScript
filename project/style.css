@@ -1,6 +1,6 @@
 :root {
   --pri: #f8f4e1;
-  --sec: #4e210a;
+  --sec: #381c0a;
   --tri1: #feba17;
   --tri2: #74512d;
   --red: red;
@@ -28,20 +28,28 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: aeonik;
   color: var(--pri);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* purana Edge */
+}
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Brave, Edge, Safari */
 }
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background-color: var(--sec);
   color: white;
+  scrollbar-gutter: stable;
 }
 #main {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
+  padding-top: 50px;
   background-color: var(--sec);
 }
 h1 {
@@ -53,72 +61,92 @@ section.allElems {
   height: 100%;
   width: 100%;
   padding: 40px;
-
+  overflow: auto;
   position: absolute;
 }
 .allElems header {
-  height: 250px;
+  /* height: 250px; */
   width: 100%;
-  background-image: url('https://images.unsplash.com/photo-1717361281130-f10a587180a2?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D');
+  background-image: url("https://images.unsplash.com/photo-1717361281130-f10a587180a2?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D");
   background-size: cover;
   background-position: center;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 60px;
+  padding: 30px 50px;
 }
 
-header .header-1 h1{
-  font-size: 50px;
-   font-weight: 700;
-}
-header .header-1 h4{
+header .header-1 h2 {
   font-size: 20px;
   font-weight: 500;
-
+  margin-bottom: 20px;
 }
-
-header .header-2 h2{
+header .header-1 h1 {
   font-size: 50px;
   font-weight: 700;
-
+  margin-bottom: 20px;
 }
-header .header-2 h4{
+header .header-1 h4 {
   font-size: 30px;
   font-weight: 500;
-
+  margin-top: 60px;
 }
-header .header-2 h3{
+
+header .header-2 h2 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+header .header-2 h4 {
+  font-size: 35px;
+  font-weight: 500;
+  margin-top: -10px;
+  margin-bottom: 40px;
+}
+header .header-2 h3 {
   font-size: 20px;
   font-weight: 500;
   opacity: 0.8;
-
 }
 .allElems .allFeatures {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
-  gap: 40px;
+  gap: 20px;
   overflow: auto;
 }
 
 .elem {
   background-color: #feba17;
   height: 300px;
-  width: 220px;
+  width: 230px;
   font-size: 20px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
   cursor: pointer;
+  -webkit-box-shadow: 0px 5px 20px rgb(0, 0, 0, 2);
   box-shadow: 0px 5px 20px rgb(0, 0, 0, 2);
 }
 .elem img {
   height: 100%;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .elem h2 {
@@ -164,8 +192,14 @@ header .header-2 h3{
   height: 80%;
   width: 100%;
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -177,8 +211,15 @@ header .header-2 h3{
 }
 
 .todo-list-fullpage .todo-container .addTask form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   padding: 30px;
 }
@@ -219,6 +260,7 @@ header .header-2 h3{
   outline: none;
   margin-bottom: 20px;
   cursor: pointer;
+  -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
 }
 .addTask form button:active {
@@ -230,16 +272,29 @@ header .header-2 h3{
   width: 65%;
   background: var(--tri2);
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   padding: 30px;
   overflow: auto;
 }
 
 .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
   background-color: var(--pri);
@@ -251,7 +306,11 @@ header .header-2 h3{
 .task h5 {
   color: var(--sec);
   font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   gap: 5px;
 }
@@ -283,8 +342,14 @@ header .header-2 h3{
 }
 
 .mark-imp {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 10px 0;
   margin-bottom: 20px;
@@ -302,6 +367,7 @@ header .header-2 h3{
 /* Task title click */
 .task-title {
   cursor: pointer;
+  -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 
@@ -321,6 +387,8 @@ header .header-2 h3{
 }
 
 .task-info {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   min-width: 0;
 }
@@ -340,15 +408,26 @@ header .header-2 h3{
   width: 100%;
   border-radius: 10px;
   padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   overflow: auto;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .daily-planner-fullpage .day-planner .day-planner-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   position: relative;
   width: 49%;
@@ -382,8 +461,14 @@ header .header-2 h3{
 .motivation-fullPage-container {
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   /* position: absolute; */
 }
@@ -393,6 +478,8 @@ header .header-2 h3{
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-radius: 50px;
   padding: auto;
@@ -406,13 +493,14 @@ header .header-2 h3{
   background-color: var(--tri1);
   border-radius: 50px;
   scale: 1.15;
+  -webkit-filter: blur(180px);
   filter: blur(180px);
   z-index: 8;
 }
 .motivational-fullpage .motivation-container .motivation-wrapper {
   z-index: 10;
   position: absolute;
-  /* height: 100%; */
+  height: 100%;
   width: 100%;
   background-color: var(--tri1);
   padding: 20px;
@@ -420,8 +508,14 @@ header .header-2 h3{
   border: 3px solid var(--sec);
 }
 .motivation-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 .motivation-1 h2 {
@@ -430,6 +524,8 @@ header .header-2 h3{
   padding: 20px;
   border-radius: 20px;
   font-size: 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   font-weight: 700;
   text-align: right;
@@ -447,8 +543,14 @@ header .header-2 h3{
 }
 
 .motivation-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 .motivation-3 h2 {
@@ -456,6 +558,8 @@ header .header-2 h3{
   padding: 20px;
   border-radius: 20px;
   font-size: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   font-weight: 500;
   text-align: right;
@@ -472,7 +576,7 @@ header .header-2 h3{
 
 .Pomodoro-fullpage {
   /* display: block; */
-  /* position: relative; */
+  position: absolute;
 }
 
 .Pomodoro-fullpage h2 {
@@ -482,6 +586,8 @@ header .header-2 h3{
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -495,21 +601,76 @@ header .header-2 h3{
   margin: 10px;
   border-radius: 5px;
   border: none;
+  -webkit-box-shadow: 5px 5px 0px black;
   box-shadow: 5px 5px 0px black;
+  -webkit-transition: all ease 0.1s;
   transition: all ease 0.1s;
   font-weight: 700;
 }
 
 .pomo-timer button:active {
+  -webkit-box-shadow: 0px 0px 0px black;
   box-shadow: 0px 0px 0px black;
 }
 .Pomodoro-fullpage .session {
   position: absolute;
   top: 20%;
   left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   background-color: var(--green);
   padding: 15px 30px;
   font-size: 30px;
   border-radius: 5px;
+}
+nav {
+  top: 0;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  margin-bottom: 30px;
+  z-index: 9;
+  padding: 0px 40px;
+}
+.nav-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: var(--tri2);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 1px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+.nav-in h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+.theme {
+  bottom: 5%;
+  left: 3%;
+  background-color: var(--pri);
+  color: var(--sec);
+  padding: 12px 15px;
+  border-radius: 10px;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+.theme h4 {
+  font-weight: 700;
+  color: var(--sec);
+  font-size: 20px;
+  pointer-events: none;
+}
+.theme:active {
+  scale: 0.96;
 }
